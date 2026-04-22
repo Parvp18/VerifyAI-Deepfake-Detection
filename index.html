@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerifyAI | Deepfake Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <span class="logo-icon">✦</span> VerifyAI
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#detect">Detect</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                    🌙
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">Next-Gen Image Forensics</div>
+            <h1>Deepfake Detection AI</h1>
+            <p>Identify AI-generated, manipulated, or synthetic images instantly with state-of-the-art neural networks. Protect your digital authenticity.</p>
+            <a href="#detect" class="btn btn-primary">
+                Get Started
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features container">
+        <div class="section-header">
+            <h2>Why Choose VerifyAI?</h2>
+            <p>Industry-leading technology built for precision and speed.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Detection</h3>
+                <p>Get comprehensive image analysis results in under 3 seconds using our optimized inference engine.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">🎯</div>
+                <h3>High Accuracy</h3>
+                <p>Achieve 99.4% detection accuracy against the latest GANs and Diffusion models.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Upload</h3>
+                <p>Your data is private. Images are processed in-memory and immediately deleted after analysis.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Powered</h3>
+                <p>Built on advanced Vision Transformers and continuously trained on millions of synthetic images.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detection Section -->
+    <section id="detect" class="detection-section container">
+        <div class="section-header">
+            <h2>Analyze an Image</h2>
+            <p>Upload a suspicious image to verify its authenticity.</p>
+        </div>
+
+        <div class="workspace glass-panel">
+
+            <!-- Upload Area -->
+            <div class="upload-zone" id="dropZone">
+                <div class="upload-icon">☁️</div>
+                <h3>Drag &amp; Drop your image here</h3>
+                <p>or click to browse files (JPEG, PNG, WebP)</p>
+                <input type="file" id="fileInput" class="file-input" accept="image/*">
+            </div>
+
+            <!-- Preview Area -->
+            <div class="preview-container" id="previewContainer">
+                <img id="imagePreview" class="preview-image" src="" alt="Image Preview">
+                <div>
+                    <button class="btn btn-primary" id="analyzeBtn">Run AI Analysis</button>
+                    <button class="btn" id="resetBtn" style="background: transparent; color: var(--text-main); border: 1px solid var(--glass-border);">Upload Different Image</button>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div class="loader-container" id="loader">
+                <div class="spinner"></div>
+                <p>Neural Network processing image details...</p>
+            </div>
+
+            <!-- Result Area -->
+            <div class="result-card glass-panel" id="resultCard">
+                <div class="result-status" id="resultText">REAL</div>
+                <p id="resultSubtext">This image appears to be authentic.</p>
+
+                <div style="margin-top: 1.5rem; text-align: left;">
+                    <span style="font-weight: 600;">AI Confidence Score</span>
+                    <span id="confidenceText" style="float: right; font-weight: 700;">0%</span>
+                    <div class="confidence-bar-bg">
+                        <div class="confidence-bar-fill" id="confidenceFill"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <span class="logo-icon">✦</span> VerifyAI
+            </div>
+            <p>© 2026 VerifyAI Technologies. Built for a transparent future.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
